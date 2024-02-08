@@ -12,7 +12,9 @@ html {
 .loginSession {
   color: white;
 }
-
+input{
+  color: white;
+}
 .containerLogin{
   width: 100%;
   display: flex;
