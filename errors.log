@@ -1,0 +1,19 @@
+{"level":"error","message":"Error: CastError: Cast to ObjectId failed for value \"asdasdasd\" (type string) at path \"_id\" for model \"products\""}
+{"level":"error","message":"Error: CastError: Cast to ObjectId failed for value \"1\" (type string) at path \"_id\" for model \"carts\""}
+{"level":"warning","message":"warning"}
+{"level":"error","message":"error"}
+{"level":"fatal","message":"fatal"}
+{"level":"warning","message":"warning"}
+{"level":"error","message":"error"}
+{"level":"fatal","message":"fatal"}
+{"level":"warning","message":"warning"}
+{"level":"error","message":"error"}
+{"level":"fatal","message":"fatal"}
+{"level":"warning","message":"warning"}
+{"level":"error","message":"error"}
+{"level":"fatal","message":"fatal"}
+{"level":"warning","message":"warning"}
+{"level":"error","message":"error"}
+{"level":"fatal","message":"fatal"}
+{"level":"error","message":"Error: Product creation error: Error trying to create product"}
+{"level":"error","message":"Error: Product creation error: Error trying to create product"}
