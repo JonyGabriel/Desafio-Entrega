@@ -1,5 +1,5 @@
 {
-  "name": "PerezJonatan",
+  "name": "desafio",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "start": "nodemon src/app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "PerezJonatan",
   "license": "ISC",
   "dependencies": {
     "@faker-js/faker": "^8.4.0",
