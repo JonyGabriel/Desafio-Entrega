@@ -1,22 +1,52 @@
 import express from "express"
 import mongoose from "mongoose"
+
 import routerProducts from "./routes/products.router.js"
 import routerCarts from "./routes/carts.router.js"
 import routerViews from "./routes/views.router.js"
 import routerSession from "./routes/session.router.js"
 import routerMocking from "./routes/mocking.router.js"
+
 import handlebars from "express-handlebars"
+
 import __dirname from "./utils.js"
+
 import cookieParser from "cookie-parser"
+
 import initializePassport from "./config/passport.config.js"
 import passport from "passport"
+
 import errorsMiddleware from "./middlewares/errors.middlewares.js"
+
 import { addLogger, logger } from "./utils/logger.js"
 import { messagesService } from "./services/index.js"
 import { Server } from "socket.io"
 import { MONGO_URL, MONGO_DBNAME, PORT } from "./config/config.js"
 
+import swaggerJSDoc from "swagger-jsdoc"
+import SwaggerUiExpress from "swagger-ui-express"
+
+
+
 const app = express()
+
+
+const swaggerOptions = {
+  definition: {
+    openapi: "3.0.1",
+    info: {
+      title: 'Documentacion de Productos',
+      description: 'Este proyecto tiene productos de computacion.'
+    }
+  },
+  apis: [`${__dirname}/./docs/**/*.yaml`]
+}
+
+const specs = swaggerJSDoc(swaggerOptions)
+app.use ('/apidocs', SwaggerUiExpress.serve, SwaggerUiExpress.setup(specs))
+
+
+
 app.use(addLogger)
 
 app.use(cookieParser())
@@ -52,6 +82,10 @@ mongoose.connect(MONGO_URL, { dbName: MONGO_DBNAME })
       })
     })
   })
+
+
+
+
   .catch(e => {
     logger.fatal("Fatal: ERROR TRYING TO CONNECT MONGO DB")
   })
